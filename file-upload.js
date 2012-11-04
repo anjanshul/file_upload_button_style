@@ -2,34 +2,19 @@ $(document).ready(function() {
 
 		$("<link/>", {rel: "stylesheet",type: "text/css",href: "file-upload.css"}).appendTo("head");
 
-		// Create a reusable object
 		var uobj = [],
-	
-			// event handlers, including blur/focus to 
-			// restore keyboard navigation
 			onUploadChange = function (e) {
 				var status = $(this);
-				//console.log(this.value);
-				//console.log(e);
 				if ( this.value ) {
-					// IE shows the whole system path, we're reducing it 
-					// to the filename for consistency
-//					var value = browser.ie ? this.value.split('\\').pop() : this.value;
-					var value = this.value
-					status.innerHTML = value;
-					$(this).parent('.file-upload').append('<span class="file-upload-status">'+status.innerHTML+'</span>');
+					var this_container = $(this).parent('.file-upload:first'),
+						value_explode = this.value.split('\\'),
+						value = value_explode[value_explode.length-1];
 
-					if (e) { 
-
-/*						uobj.setElement( status ).
-							setOpacity( 0 ).
-							start({ 
-								opacity: 1, duration: 500 
-							});
-*/
+					if(this_container.find('.file-upload-status').length > 0){
+						this_container.find('.file-upload-status').remove();
 					}
-				}
-				else if ( status && status.parentNode ) {
+					this_container.append('<span class="file-upload-status">'+value+'</span>');
+				} else if ( status && status.parentNode ) {
 					removeElement( status );
 				}
 			}, 
@@ -40,21 +25,17 @@ $(document).ready(function() {
 				removeClass( this.parentNode, 'focus' );
 			};
 		
-		
-		$('.file-upload input[type=file]').each(function() {
-
-			// Create a status element, and store it
-//			storeData( field, 'upload-status', createElement( 'span.file-upload-status' ) );
-
-			
+		$('.file-upload input[type=file]').each(function() {			
 			// Bind events
 			$(this).bind('focus',onUploadFocus);
 			$(this).bind('blur',onUploadBlur);
 			$(this).bind('change',onUploadChange);
 
 			// Set current state 
-			onUploadChange.call(this);
-			
+			onUploadChange.call(this);			
+
+			$(this).style.left = '-800px';
+
 			// Move the file input in Firefox / Opera so that the button part is
 			// in the hit area. Otherwise we get a text selection cursor
 			// which you cannot override with CSS
