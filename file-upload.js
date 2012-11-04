@@ -1,14 +1,15 @@
+$(document).ready(function() {
 
-(function () {
-	
-	// import library
-	eval( JELLY.unpack() );
 
-	addDomReady( function () {
-	
-		// Load our css
-		Load.css( 'file-upload.css' );
-		
+
+
+$("<link/>", {
+   rel: "stylesheet",
+   type: "text/css",
+   href: "file-upload.css"
+}).appendTo("head");
+
+
 		// Create a reusable tweening object
 		var tween = new Tween,
 	
@@ -70,6 +71,7 @@
 				field.style.width = '0';
 			}
 		});
-	});
 
-})();
+
+
+});
