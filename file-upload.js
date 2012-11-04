@@ -34,7 +34,8 @@ $(document).ready(function() {
 			// Set current state 
 			onUploadChange.call(this);			
 
-			$(this).style.left = '-800px';
+			// combined css rules fix (from below), push to every browser
+			$(this).css({'left':'-800px','width':'0'});
 
 			// Move the file input in Firefox / Opera so that the button part is
 			// in the hit area. Otherwise we get a text selection cursor
