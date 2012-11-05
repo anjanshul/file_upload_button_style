@@ -1,7 +1,6 @@
 $(document).ready(function() {
 
 		$("<link/>", {rel: "stylesheet",type: "text/css",href: "file-upload.css"}).appendTo("head");
-
 		var uobj = [],
 			onUploadChange = function (e) {
 				var status = $(this);
@@ -14,15 +13,13 @@ $(document).ready(function() {
 						this_container.find('.file-upload-status').remove();
 					}
 					this_container.append('<span class="file-upload-status">'+value+'</span>');
-				} else if ( status && status.parentNode ) {
-					removeElement( status );
 				}
 			}, 
-			onUploadFocus = function () { 
-				addClass( this.parentNode, 'focus' ); 
+			onUploadFocus = function () {
+				$(this).parent().addClass('focus');
 			},
-			onUploadBlur = function () { 
-				removeClass( this.parentNode, 'focus' );
+			onUploadBlur = function () {
+				$(this).parent().addClass('focus');
 			};
 		
 		$('.file-upload input[type=file]').each(function() {			
@@ -34,22 +31,7 @@ $(document).ready(function() {
 			// Set current state 
 			onUploadChange.call(this);			
 
-			// combined css rules fix (from below), push to every browser
-			$(this).css({'left':'-800px','width':'0'});
-
-			// Move the file input in Firefox / Opera so that the button part is
-			// in the hit area. Otherwise we get a text selection cursor
-			// which you cannot override with CSS
-
-/*
-			if ( browser.firefox || browser.opera ) {
-				field.style.left = '-800px';
-			}
-			else if ( browser.ie ) {
-				// Minimizes the text input part in IE
-				field.style.width = '0';
-			}
-*/
-
+			// Minimizes the text input part in IE
+			$(this).css('width','0');
 		});
 });
