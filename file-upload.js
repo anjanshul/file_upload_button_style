@@ -7,8 +7,8 @@ $(document).ready(function() {
 						value_explode = this.value.split('\\'),
 						value = value_explode[value_explode.length-1];
 
-					if(this_container.find('.file-upload-status').length > 0){
-						this_container.find('.file-upload-status').remove();
+					if(this_container.next('.file-upload-status').length > 0){
+						this_container.next('.file-upload-status').remove();
 					}
 					//this_container.append('<span class="file-upload-status">'+value+'</span>');
 					$('<span class="file-upload-status">'+value+'</span>').insertAfter(this_container);
