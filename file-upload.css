@@ -1,9 +1,4 @@
-/* 
-
-	As this stylesheet is lazy loaded these styles only apply if JavaScript is enabled
-
-*/	
-.file-upload {
+.file-upload.custom {
 	overflow: hidden;
 	display: inline-block;
 	position: relative;	
@@ -22,15 +17,15 @@
 	text-shadow: #000 1px 1px 4px;
     }
 	
-.file-upload:hover { 
+.file-upload.custom:hover { 
 	background: #2FA2FF; 
 	}
 
-.file-upload.focus { 
+.file-upload.custom.focus { 
 	outline: 2px solid yellow;
 	}
 
-.file-upload input {
+.file-upload.custom input {
 	position: absolute;
 	top: 0;
 	left: 0;
@@ -42,11 +37,11 @@
 	filter: alpha(opacity=0);
 	}
 
-.file-upload strong { 
+.file-upload.custom strong { 
 	font: normal 1.75em arial,sans-serif; 
 	}	
 	
-.file-upload span {
+.file-upload.custom span {
 	position: absolute;
 	top: 0;
 	left: 0;
@@ -57,10 +52,10 @@
 	}
 
 /* Adjust the button size */	
-.file-upload { height: 3em; }
-.file-upload,
-.file-upload span {	width: 14em; }	
+.file-upload.custom { height: 3em; }
+.file-upload.custom,
+.file-upload.custom span {	width: 14em; }	
 
-.file-upload-status {
-	
+.file-upload.custom-status {
+
 	}

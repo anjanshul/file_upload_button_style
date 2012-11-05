@@ -1,6 +1,4 @@
 $(document).ready(function() {
-
-		$("<link/>", {rel: "stylesheet",type: "text/css",href: "file-upload.css"}).appendTo("head");
 		var uobj = [],
 			onUploadChange = function (e) {
 				var status = $(this);
@@ -22,7 +20,7 @@ $(document).ready(function() {
 				$(this).parent().addClass('focus');
 			};
 		
-		$('.file-upload input[type=file]').each(function() {			
+		$('.file-upload.custom input[type=file]').each(function() {			
 			// Bind events
 			$(this).bind('focus',onUploadFocus);
 			$(this).bind('blur',onUploadBlur);

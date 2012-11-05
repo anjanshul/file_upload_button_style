@@ -3,33 +3,33 @@
 <head>
 <title>File upload styling demo</title>
 <script type="text/javascript" src="jquery.js"></script>
-<style type="text/css">
+<link href="file-upload.css" media="screen" rel="stylesheet" type="text/css" />
 
-
-</style>
 </head>
 <body>
 <div id="wrap">
 
 <form enctype="multipart/form-data" action="#" method="post">
+	<h1>Adding class "custom" overrides default style</h1>
 	<div class="field">
-		<label class="file-upload">
+		<label class="file-upload custom">
 			<span><strong>Upload file I</strong></span>
 			<input type="file" name="uploadfile" />
 		</label>
 	</div>
 	<div class="field">
-		<label class="file-upload">
+		<label class="file-upload custom">
 			<span><strong>Upload file II</strong></span>
 			<input type="file" name="uploadfile2" />
 		</label>
 	</div>
 	<div class="field">
-		<label class="file-upload">
+		<label class="file-upload custom">
 			<span><strong>Upload file III</strong></span>
 			<input type="file" name="uploadfile3" />
 		</label>
 	</div>
+	<h1>Regular upload form</h1>
 	<div class="field">
 		<label class="file-upload">
 			<span><strong>Upload file IV</strong></span>
