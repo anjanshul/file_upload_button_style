@@ -23,9 +23,17 @@ $(document).ready(function() {
 		
 		$('.file-upload.custom input[type=file]').each(function() {			
 			// Bind events
-			$(this).bind('focus',onUploadFocus);
-			$(this).bind('blur',onUploadBlur);
-			$(this).bind('change',onUploadChange);
+			$(this)
+				.bind('focus',onUploadFocus)
+				.bind('blur',onUploadBlur)
+				.bind('change',onUploadChange);
+
+			// Get label width so we can make button fluid, 12px default left/right padding
+			var lbl_width = $(this).parent().find('span strong').width() + 24;
+			$(this)
+				.parent().find('span').css('width',lbl_width)
+				.closest('.file-upload').css('width',lbl_width);
+
 
 			// Set current state 
 			onUploadChange.call(this);			
