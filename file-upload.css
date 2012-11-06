@@ -39,6 +39,7 @@
 
 .file-upload.custom strong { 
 	font: normal 1.75em arial,sans-serif; 
+	white-space:nowrap;
 	}	
 	
 .file-upload.custom span {

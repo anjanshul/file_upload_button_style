@@ -32,8 +32,7 @@ $(document).ready(function() {
 			var lbl_width = $(this).parent().find('span strong').width() + 24;
 			$(this)
 				.parent().find('span').css('width',lbl_width)
-				.closest('.file-upload').css('width',lbl_width);
-
+				.closest('.file-upload.custom').css('width',lbl_width);
 
 			// Set current state 
 			onUploadChange.call(this);			
